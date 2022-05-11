@@ -57,7 +57,7 @@ module.exports.answer_post_method = async (req, res) => {
 module.exports.get_academic_method = async (req, res) => {
   try {
     const academicPosts = await Post.find({ tag: "Academics" });
-    res.status(200).json({ academicPosts });
+    res.status(200).json({ academicPosts }).sort({ createdAt: -1 });
   } catch (err) {
     res.status(400).json({ err });
   }
@@ -65,7 +65,7 @@ module.exports.get_academic_method = async (req, res) => {
 
 module.exports.get_club_method = async (req, res) => {
   try {
-    const clubPosts = await Post.find({ tag: "Club" });
+    const clubPosts = await Post.find({ tag: "Club" }).sort({ createdAt: -1 });
     res.status(200).json({ clubPosts });
   } catch (err) {
     res.status(400).json({ err });
@@ -74,7 +74,9 @@ module.exports.get_club_method = async (req, res) => {
 
 module.exports.get_cocurricular_method = async (req, res) => {
   try {
-    const CocurricularPosts = await Post.find({ tag: "Co-Curricular" });
+    const CocurricularPosts = await Post.find({ tag: "Co-Curricular" }).sort({
+      createdAt: -1,
+    });
     res.status(200).json({ CocurricularPosts });
   } catch (err) {
     res.status(400).json({ err });
@@ -83,7 +85,7 @@ module.exports.get_cocurricular_method = async (req, res) => {
 
 module.exports.get_all_post_get_method = async (req, res) => {
   try {
-    const Posts = await Post.find();
+    const Posts = await Post.find().sort({ createdAt: -1 });
     res.status(200).json({ Posts });
   } catch (err) {
     res.status(400).json({ err });

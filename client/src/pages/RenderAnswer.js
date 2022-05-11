@@ -30,7 +30,7 @@ export default function RenderAnswer(props) {
         <h1 className="text-2xl text-blue-2 font-roboto">{post.description}</h1>
       </div>
       <div>
-        {post.answers.map((answer) => {
+        {post.answers.reverse().map((answer) => {
           return <Answertemp answer={answer} key={answer._id} />;
         })}
       </div>
