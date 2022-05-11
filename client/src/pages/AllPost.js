@@ -30,7 +30,6 @@ export default function AllPost(props) {
             navigate("/compose");
           }}
         >
-          Answer
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-16 w-16"
