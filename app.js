@@ -16,10 +16,6 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(cookieParser());
 
-app.get("*", checkUser);
-app.post("/compose", checkUser);
-app.post("/answer", checkUser);
-
 const dbURI = process.env.DATABASE;
 mongoose
   .connect(dbURI, {
