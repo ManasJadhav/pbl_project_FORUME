@@ -25,11 +25,12 @@ export default function AllPost(props) {
       })}
       <div className="fixed right-10 bottom-10">
         <button
-          className="hover:scale-110"
+          className="hover:scale-110 "
           onClick={() => {
             navigate("/compose");
           }}
         >
+          Answer
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-16 w-16"
